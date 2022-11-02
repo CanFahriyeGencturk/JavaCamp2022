@@ -40,6 +40,7 @@ public class CourseManager implements CourseService {
 	@Override
 	public List<Course> updateById(int id, String newCourseName) throws Exception {
 		findById(id);
+		sameNameIsExist(newCourseName);
 		return courseRepository.updateById(id, newCourseName);
 	}
 
